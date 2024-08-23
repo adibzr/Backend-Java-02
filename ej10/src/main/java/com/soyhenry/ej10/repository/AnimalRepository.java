@@ -10,6 +10,7 @@ es una especialización de @Component.
 
 @Repository
 public class AnimalRepository {
+    // simulación de acceso a datos, no hay implementación de repository o DAO
     public Animal getAnAnimal() {
         Animal animal = new Animal("Perro", "Bobby");
         return animal;

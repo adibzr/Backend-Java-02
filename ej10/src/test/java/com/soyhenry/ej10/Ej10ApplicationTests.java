@@ -6,6 +6,8 @@ import com.soyhenry.ej10.config.ComponenExample;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /*  Spring
 @SpringBootApplication: Marca la clase principal de una aplicación Spring Boot.
@@ -29,8 +31,6 @@ class Ej10ApplicationTests {
 	@Autowired
 	BeanExample beanExample;
 
-	@Autowired
-	BeanXMLExample beanXMLExample;
 
 	@Test
 	void componentExampleAddNumbers(){
@@ -49,7 +49,12 @@ class Ej10ApplicationTests {
 
 	@Test
 	void beanXMLExampleTest(){
+
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		BeanXMLExample beanXMLExample = (BeanXMLExample) context.getBean("AppInfoXML");
+
 		System.out.println(beanXMLExample.AppInfoXML());
 	}
+
 
 }
