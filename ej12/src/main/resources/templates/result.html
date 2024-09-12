@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Conversion Result</title>
+</head>
+<body>
+<h1>Conversion Result</h1>
+<p th:text="'Converted ' + ${amount} + ' ' + ${fromCurrency} + ' to ' + ${convertedAmount} + ' ' + ${toCurrency}"></p>
+<a th:href="@{/}">Convert Another Amount</a>
+</body>
+</html>

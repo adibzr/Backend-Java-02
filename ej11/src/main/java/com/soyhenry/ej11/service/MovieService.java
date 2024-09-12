@@ -1,6 +1,6 @@
 package com.soyhenry.ej11.service;
 
-import com.soyhenry.ej11.controller.MovieController;
+import com.soyhenry.ej11.controller.v1.MovieController;
 import com.soyhenry.ej11.model.Movie;
 import com.soyhenry.ej11.repository.MovieDao;
 import org.slf4j.Logger;
@@ -41,5 +41,17 @@ public class MovieService {
         }
 
         return movieList;
+    }
+
+    public Boolean addMovie(Movie movie) {
+        return movieDao.add(movie);
+    }
+
+    public Boolean updMovie(Movie movie) {
+        return movieDao.upd(movie);
+    }
+
+    public Boolean delMovie(Movie movie) {
+        return movieDao.del(movie);
     }
 }

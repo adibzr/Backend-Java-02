@@ -78,19 +78,20 @@ public class MovieDao implements Dao<Movie, Long>, MySQLConnection {
     @Override
     public Boolean add(Movie movie) {
         Boolean resultado = false;
-        /*
+
         try {
-            psAdd = conectarDB().prepareStatement("INSERT INTO Movies (nombre, especie) "
-                    + " VALUES (?,?);");
-            psAdd.setString(1, movie.getNombre());
-            psAdd.setString(2, movie.getEspecie());
+            psAdd = conectarDB().prepareStatement("INSERT INTO Movies (movieName, description, yearOfRelease ) "
+                    + " VALUES (?,?,?);");
+            psAdd.setString(1, movie.getName());
+            psAdd.setString(2, movie.getDescription());
+            psAdd.setInt(3, movie.getYearOfRelease());
             if(psAdd.executeUpdate()==1) {
                 resultado = true;
                 System.out.println("Película generada!:"+ movie.toString());
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }*/
+        }
         return resultado;
 
 
@@ -99,7 +100,7 @@ public class MovieDao implements Dao<Movie, Long>, MySQLConnection {
     @Override
     public Boolean del(Movie movie) {
         Boolean resultado = false;
-        /*
+
         try {
             if(psDel == null) {
                 psDel = conectarDB().prepareStatement("DELETE FROM Movies WHERE id = ? ");
@@ -113,7 +114,6 @@ public class MovieDao implements Dao<Movie, Long>, MySQLConnection {
             e.printStackTrace();
         }
 
-         */
         return resultado;
     }
 
