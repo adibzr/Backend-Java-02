@@ -1,0 +1,2 @@
+INSERT INTO Movie (name, summary, year_of_release, duration_in_minutes) VALUES ('The Lord of the Rings', 'Pelicula de Frodo', 2001, 225);
+INSERT INTO Movie (name, summary, year_of_release, duration_in_minutes) VALUES ('Back to the future', 'Pelicula de Marty McFly', 1985, 115);
